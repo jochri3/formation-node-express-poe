@@ -1,20 +1,29 @@
-const {readFile,writeFile} = require("fs/promises");
+const {writeFile} = require("fs/promises");
+const {jsonParser} = require("../utils/json-parser");
+const {generateRandomIndex} = require("../utils/random-index");
 
 class CategoryRepository{
-    findAll(){
-
+    async findAll(){
+        return await jsonParser("./database.json");
     }
-    findOne(id){
-
+    async findOne(id){
+        const categories=await jsonParser("./database.json");
+        return categories[id];
     }
-    createOne(objetCategory){
-
+    async createOne(objetCategory){
+        const categories=await jsonParser("./database.json");
+        const index=generateRandomIndex();
+        categories[index]=objetCategory;
+        await writeFile("/database.json",JSON.stringify(categories))
     }
-    updateOne(id,objetCategory){
-
+    async updateOne(id,objetCategory){
+        const categories=await jsonParser("./database.json");
+        categories[id]=objetCategory;
+        await writeFile("/database.json",JSON.stringify(categories))
     }
-    deleteOne(id){
-
+    async deleteOne(id){
+        const categories=await jsonParser("./database.json");
+        delete  categories[id];
     }
 }
 
