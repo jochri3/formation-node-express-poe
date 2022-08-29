@@ -13,3 +13,17 @@
 # POST  /api/categories Data {"name":"","description":""}, client curl/7.77.0
 # POST  /api/categories Data {"name":"Vetements","description":"Oyo eza ba forme"}, client curl/7.77.0
 # GET  /api/categories Data {}, client curl/7.77.0
+# GET  / Data {}, client curl/7.77.0
+# GET  /1 Data {}, client curl/7.77.0
+# GET  /45 Data {}, client curl/7.77.0
+# DELETE  /45 Data {}, client curl/7.77.0
+# DELETE  /2 Data {}, client curl/7.77.0
+# GET  / Data {}, client curl/7.77.0
+# POST  / Data {"name":"","description":""}, client curl/7.77.0
+# POST  / Data {"name":"","description":"Chose"}, client curl/7.77.0
+# POST  / Data {"name":"Truc","description":"Chose"}, client curl/7.77.0
+# GET  / Data {}, client curl/7.77.0
+# PATCH  /1 Data {"nom":"Des consoles"}, client curl/7.77.0
+# PATCH  /1 Data {"nom":"Des consoles","description":"Un truc pour moms"}, client curl/7.77.0
+# PATCH  /1 Data {"name":"Des consoles","description":"Un truc pour moms"}, client curl/7.77.0
+# GET  / Data {}, client curl/7.77.0
