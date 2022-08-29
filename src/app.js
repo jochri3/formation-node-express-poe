@@ -35,6 +35,14 @@ app.post("/api/categories",(req,res)=>{
     res.status(201).send("Catégorie créée avec succès")
 })
 
+app.patch("/api/categories/:id",(req,res)=>{
+    const id=parseInt(req.params.id)
+    const category=categories.find(category=>category.id===id);
+    if(!category) return res.status(404).send("Category with given id does not exist")
+    Object.assign(category,req.body)
+    res.send("Catégorie mis à jour avec succès");
+});
+
 
 app.listen(3000,()=>{
     console.log("Le serveur écoute sur le port 3000!!")
