@@ -1,0 +1,12 @@
+Créer une classe que vous allez appeler : CategoriesRepository
+
+Vous devez avoir les méthodes reponsable(Bas niveau) de faire le CRUD :
+
+findAll(){}
+findOne(id){}
+createOne(objetCategory){}
+updateOne(id,objetCategory){}
+deleteOne(id)
+
+
+Ensuite créer un service qui peut être utilisé ailleurs par d'autres controleurs ou même middlewares
