@@ -27,4 +27,4 @@ class CategoryRepository{
     }
 }
 
-module.exports.CategoryRepository=CategoryRepository;
+module.exports.CategoryRepository=new CategoryRepository();
