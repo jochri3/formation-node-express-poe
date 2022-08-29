@@ -4,6 +4,7 @@ const cors=require("cors");
 const app=express();
 
 app.use(cors())
+app.use(express.json())
 
 const categories=[{id:1,nom:"Jeux videos"},{id:2,nom:"Ordinateurs portables"}]
 
@@ -27,6 +28,11 @@ app.delete("/api/categories/:id",(req,res)=>{
     if(index===-1) return res.status(404).send("Category with given id does not exist")
     categories.splice(index,1)
     res.send("Supprimé avec succès")
+})
+
+app.post("/api/categories",(req,res)=>{
+    categories.push(req.body)
+    res.status(201).send("Catégorie créée avec succès")
 })
 
 
