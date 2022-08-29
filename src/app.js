@@ -19,6 +19,30 @@ function logger(req,res,next){
    })
 }
 
+// Ceci est un TP : Tant que tous les champs ne sont pas remplis(name et description).
+// Envoyer un message d'erreur que les développeurs frontend vont afficher dans les formulaires
+function validateBody(req,res,next){
+    const body=req.body;
+    const validator={errors:{},isValid:true}
+    if(!body.name){
+        validator.errors.name="name cannot be empty"
+    }
+
+    if(!body.description){
+        validator.errors.description="description cannot be empty"
+    }
+
+    if(validator.errors.name || validator.errors.description){
+        validator.isValid=false;
+    }
+
+    if(!validator.isValid){
+        return res.status(422).send(validator)
+    }
+
+    next()
+}
+
 const categories=[{id:1,nom:"Jeux videos"},{id:2,nom:"Ordinateurs portables"}]
 
 
@@ -42,12 +66,12 @@ app.delete("/api/categories/:id",[logger],(req,res)=>{
     res.send("Supprimé avec succès")
 })
 
-app.post("/api/categories",[logger],(req,res)=>{
+app.post("/api/categories",[logger,validateBody],(req,res)=>{
     categories.push(req.body)
     res.status(201).send("Catégorie créée avec succès")
 })
 
-app.patch("/api/categories/:id",[logger],(req,res)=>{
+app.patch("/api/categories/:id",[logger,validateBody],(req,res)=>{
     const id=parseInt(req.params.id)
     const category=categories.find(category=>category.id===id);
     if(!category) return res.status(404).send("Category with given id does not exist")
