@@ -1,0 +1,6 @@
+# GET  /api/categories Data {}
+# GET  /api/categories/1 Data {}
+# PATCH  /api/categories/1 Data {"nom":"Des consoles"}
+# POST  /api/categories Data {"id":3,"nom":"Vetements"}
+# GET  /api/categories Data {}
+# GET  /api/categories Data {}
