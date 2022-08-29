@@ -11,7 +11,7 @@ app.use(express.json())
 // On peut aussi créer nos propres middlewares
 // Un middleware pour écrire des logs
 function logger(req,res,next){
-    const logString=`# ${req.method}  ${req.url} Data ${JSON.stringify(req?.body)}`
+    const logString=`# ${req.method}  ${req.url} Data ${JSON.stringify(req?.body)}, client ${req.headers["user-agent"]}`
    fs.appendFile("./logs.txt",logString+"\n").then(data=>{
        next()
    }).catch(err=>{
