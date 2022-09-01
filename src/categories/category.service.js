@@ -1,4 +1,4 @@
-const {CategoryRepository} = require("./category.repository");
+const {categoryRepository} = require("./category.repository");
 
 class CategoryService{
     constructor(categoryRepository) {
@@ -8,7 +8,8 @@ class CategoryService{
         return this.categoryRepository.findAll()
     }
     async findOne(id){
-         const category=await this.categoryRepository.findOne()
+         const category=await this.categoryRepository.findOne(id)
+        console.log("Valeur : ",category)
         if(!category) throw new Error(`Cannot find category with id ${id}`)
         return category;
     }
@@ -28,4 +29,4 @@ class CategoryService{
 }
 
 
-module.exports.CategoryService=new CategoryService(CategoryRepository);
+module.exports.categoryService=new CategoryService(categoryRepository);

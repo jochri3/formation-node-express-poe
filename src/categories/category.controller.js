@@ -1,43 +1,57 @@
-const {categories} = require("../database");
+const { categoryService } = require('./category.service')
 
+class CategoryController {
+  constructor(categoryService) {
+    this.categoryService = categoryService
+    console.log(this)
+  }
+  findAll = async (_, res) => {
+    const categories = await this.categoryService.findAll()
+    res.send(categories)
+  }
 
-class CategoryController{
-    findAll(_,res){
-        res.send(categories)
+  findOne = async ({ params }, res) => {
+    try {
+      const id = params.id
+      const category = await this.categoryService.findOne(id)
+      res.send(category)
+    } catch (err) {
+      console.log('Erreur : ', err.message)
+      res.status(404).send(err.message)
     }
+  }
 
-    findOne({params},res){
-        const id=parseInt(params.id)
-        const category=categories.find(category=>category.id===id);
-        if(!category) return res.status(404).send("Category with given id does not exist")
-        res.send(category)
+  deleteOne = async ({ params }, res) => {
+    try {
+      const id = params.id
+      await this.categoryService.deleteOne(id)
+      res.send('Catégorie supprimé avec succès')
+    } catch (err) {
+      console.log('Erreur : ', err.message)
+      res.status(404).send(err.message)
     }
+  }
 
-
-    deleteOne({params},res){
-        const id=parseInt(params.id)
-        const index=categories.findIndex(category=>category.id===id);
-        if(index===-1) return res.status(404).send("Category with given id does not exist")
-        categories.splice(index,1)
-        res.send("Supprimé avec succès")
+  createOne = async ({ body }, res) => {
+    try {
+      await this.categoryService.createOne(body)
+      res.status(201).send('Catégorie créée avec succès')
+    } catch (err) {
+      res.sendStatus(500)
+      console.log(err)
     }
+  }
 
-
-    createOne({body},res){
-        categories.push(body)
-        res.status(201).send("Catégorie créée avec succès")
+  updateOne = async ({ params, body }, res) => {
+    try {
+      const id = params.id
+      await this.categoryService.updateOne(id, body)
+      res.send('Catégorie mis à jour avec succès')
+    } catch (err) {
+      console.log('Erreur : ', err.message)
+      res.status(404).send(err.message)
     }
-
-
-    updateOne({params,body},res){
-        const id=parseInt(params.id)
-        const category=categories.find(category=>category.id===id);
-        if(!category) return res.status(404).send("Category with given id does not exist")
-        Object.assign(category,body)
-        res.send("Catégorie mis à jour avec succès");
-    }
+  }
 }
 
-
-
-module.exports.CategoryController=CategoryController
+module.exports.categoryController = new CategoryController(categoryService)

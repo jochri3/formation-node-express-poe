@@ -1,9 +1,10 @@
 const {Router} = require("express");
-const {CategoryController} = require("./category.controller");
+const {categoryController} = require("./category.controller");
 const {logger} = require("../middlewares/logger");
 const {validateBody} = require("./category.validate-middleware");
 
-const categoryController=new CategoryController();
+
+
 
 const CategoryRouter=Router();
 
