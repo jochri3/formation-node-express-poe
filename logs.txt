@@ -88,3 +88,7 @@
 # DELETE  /400 Data {}, client PostmanRuntime/7.29.2
 # GET  / Data {}, client PostmanRuntime/7.29.2
 # GET  / Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# POST  / Data {"name":"Ordinateurs","description":"Ici on trouve les laptops"}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# PUT  /583 Data {"name":"Ordinateurs","description":"Ici on trouve les Laptops et Ordinateurs de bureau"}, client PostmanRuntime/7.29.2
