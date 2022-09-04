@@ -13,7 +13,7 @@ class CategoryRepository{
     async createOne(objetCategory){
         const categories=await jsonParser("./database.json");
         const index=generateRandomIndex();
-        categories[index]={id:index,...objetCategory};
+        categories[index]=objetCategory;
         await writeFile("./database.json",JSON.stringify(categories))
     }
     async updateOne(id,objetCategory){
@@ -24,6 +24,7 @@ class CategoryRepository{
     async deleteOne(id){
         const categories=await jsonParser("./database.json");
         delete  categories[id];
+        await writeFile("./database.json",JSON.stringify(categories));
     }
 }
 

@@ -12,6 +12,6 @@ CategoryRouter.get("/",[logger],categoryController.findAll)
 CategoryRouter.get("/:id",[logger],categoryController.findOne)
 CategoryRouter.delete("/:id",[logger],categoryController.deleteOne)
 CategoryRouter.post("/",[logger,validateBody],categoryController.createOne)
-CategoryRouter.patch("/:id",[logger,validateBody],categoryController.updateOne)
+CategoryRouter.put("/:id",[logger,validateBody],categoryController.updateOne)
 
 module.exports.CategoryRouter=CategoryRouter;

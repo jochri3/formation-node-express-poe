@@ -17,12 +17,12 @@ class CategoryService{
         return this.categoryRepository.createOne(objectCategory)
     }
     async updateOne(id,objectCategory){
-        const category=await this.categoryRepository.findOne()
+        const category=await this.categoryRepository.findOne(id)
         if(!category) throw new Error(`Cannot find category with id ${id}`)
         return this.categoryRepository.updateOne(id,objectCategory);
     }
     async deleteOne(id){
-        const category=await this.categoryRepository.findOne()
+        const category=await this.categoryRepository.findOne(id)
         if(!category) throw new Error(`Cannot find category with id ${id}`);
         return this.categoryRepository.deleteOne(id)
     }

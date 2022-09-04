@@ -63,3 +63,28 @@
 # GET  /989 Data {}, client Apache-HttpClient/4.5.13 (Java/11.0.15)
 # GET  / Data {}, client Apache-HttpClient/4.5.13 (Java/11.0.15)
 # GET  /986 Data {}, client Apache-HttpClient/4.5.13 (Java/11.0.15)
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# POST  / Data {"name":"Vêtements","description":"Tous ce qui touche aux vêtements"}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# POST  / Data {"name":"Jouets","description":"Ici, c'est les gosses qui vont être content"}, client PostmanRuntime/7.29.2
+# GET  /932 Data {}, client PostmanRuntime/7.29.2
+# PATCH  /932 Data {"name":"Jouets & Loisirs"}, client PostmanRuntime/7.29.2
+# PATCH  /932 Data {"name":"Jouets","description":"Tous ce qui est jouet et loisir"}, client PostmanRuntime/7.29.2
+# PATCH  /932 Data {"name":"Jouets","description":"Tous ce qui est jouet et loisir"}, client PostmanRuntime/7.29.2
+# PUT  /932 Data {"name":"Jouets","description":"Tous ce qui est jouet et loisir"}, client PostmanRuntime/7.29.2
+# PUT  /932 Data {"name":"Jouets","description":"Tous ce qui est jouet et loisir"}, client PostmanRuntime/7.29.2
+# PUT  /932 Data {"name":"Jouets","description":"Tous ce qui est jouet ou loisirs"}, client PostmanRuntime/7.29.2
+# POST  / Data {"name":"Simoni","description":"Kimbangu"}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# DELETE  /400 Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# DELETE  /400 Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# DELETE  /40 Data {}, client PostmanRuntime/7.29.2
+# DELETE  /400 Data {}, client PostmanRuntime/7.29.2
+# DELETE  /400 Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2
+# GET  / Data {}, client PostmanRuntime/7.29.2

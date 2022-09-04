@@ -3,7 +3,6 @@ const { categoryService } = require('./category.service')
 class CategoryController {
   constructor(categoryService) {
     this.categoryService = categoryService
-    console.log(this)
   }
   findAll = async (_, res) => {
     const categories = await this.categoryService.findAll()
